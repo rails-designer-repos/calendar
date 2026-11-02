@@ -1,0 +1,11 @@
+<ol class="calendar">
+  <li class="header" role="presentation">
+    <% range.header_days.each do |day| %>
+      <span class="header-day"><%= day.strftime("%a") %></span>
+    <% end %>
+  </li>
+
+  <% range.days.each do |day| %>
+    <%= render "pages/day", day: day, month: range.month, events: events_by_day.fetch(day, []) %>
+  <% end %>
+</ol>

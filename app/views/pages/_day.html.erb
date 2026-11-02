@@ -1,0 +1,11 @@
+<li class="<%= day_classes(day, month) %>" id="day-<%= day.iso8601 %>">
+  <div class="entries">
+    <% events.each do |event| %>
+      <%= render "pages/event", event: event %>
+    <% end %>
+  </div>
+
+  <div class="date">
+    <span class="number"><%= day.day %></span>
+  </div>
+</li>

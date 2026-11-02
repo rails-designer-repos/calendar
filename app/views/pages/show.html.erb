@@ -1,1 +1,11 @@
+<div class="calendar-page">
+  <nav class="calendar-nav">
+    <%= link_to "&larr;".html_safe, root_path(start_date: @range.month.prev_month), aria: { label: "Previous month" } %>
+    <%= link_to "Today", root_path %>
+    <%= link_to "&rarr;".html_safe, root_path(start_date: @range.month.next_month), aria: { label: "Next month" } %>
 
+    <h1><%= @range.month.strftime("%B %Y") %></h1>
+  </nav>
+
+  <%= render "pages/month", range: @range, events_by_day: @events_by_day %>
+</div>
